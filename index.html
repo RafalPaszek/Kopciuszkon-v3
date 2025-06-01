@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakeItEco - Transform Waste into Wonder</title>
+    <title>EcoRevive - Transform Waste into Wonder</title>
     <style>
         * {
             margin: 0;
@@ -189,39 +189,6 @@
             opacity: 0.8;
         }
 
-        /* Action buttons */
-        .action-buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .action-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .action-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        .reels-btn {
-            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
-        }
-
-        .reels-btn:hover {
-            background: linear-gradient(45deg, #ff5252, #ff7979);
-        }
-
         /* Content right */
         .content-right {
             flex: 1;
@@ -402,127 +369,6 @@
             transform: translateY(-2px);
         }
 
-        /* Reels page styles */
-        .reels-page {
-            display: none;
-            color: white;
-            padding: 40px 0;
-            min-height: 100vh;
-        }
-
-        .reels-container {
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .reels-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .reels-title {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .reels-subtitle {
-            font-size: 18px;
-            opacity: 0.8;
-        }
-
-        .reel-item {
-            background: rgba(255,255,255,0.15);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 20px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .reel-item:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .reel-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .reel-icon {
-            width: 50px;
-            height: 50px;
-            background: #4a8c3a;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            margin-right: 15px;
-        }
-
-        .reel-title {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .reel-category {
-            font-size: 14px;
-            opacity: 0.7;
-        }
-
-        .reel-content {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .reel-actions {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .reel-action {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            padding: 10px 15px;
-            border-radius: 20px;
-        }
-
-        .reel-action:hover {
-            background: rgba(255,255,255,0.2);
-            transform: scale(1.05);
-        }
-
-        .action-icon {
-            font-size: 20px;
-        }
-
-        .action-count {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        .upvote-action {
-            color: #4CAF50;
-        }
-
-        .downvote-action {
-            color: #f44336;
-        }
-
-        .comment-action {
-            color: #2196F3;
-        }
-
         /* Responsive design */
         @media (max-width: 768px) {
             .main-content {
@@ -546,16 +392,6 @@
                 position: relative;
                 margin-top: 30px;
             }
-
-            .action-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .action-btn {
-                width: 100%;
-                max-width: 250px;
-            }
         }
     </style>
 </head>
@@ -567,12 +403,11 @@
         <header>
             <div class="logo">
                 <div class="logo-icon">♻</div>
-                MakeItEco
+                EcoRevive
             </div>
             <nav>
                 <ul>
                     <li><a href="#" onclick="showHome()">HOME</a></li>
-                    <li><a href="#" onclick="showReels()">REELS</a></li>
                     <li><a href="#" onclick="alert('About Us - Coming Soon!')">ABOUT US</a></li>
                     <li><a href="#" onclick="alert('Account - Coming Soon!')">ACCOUNT</a></li>
                     <li><a href="#" onclick="alert('Announcements - Coming Soon!')">ANNOUNCEMENTS</a></li>
@@ -599,12 +434,7 @@
                         <div class="search-results" id="searchResults"></div>
                     </div>
 
-                    <div class="action-buttons">
-                        <button class="action-btn reels-btn" onclick="showReels()">📱 Watch Reels</button>
-                        <button class="action-btn" onclick="alert('Submit your creative reuse ideas! Feature coming soon.')">💡 Submit Ideas</button>
-                    </div>
-
-                    <div class="website-url">www.makeiteeco.com</div>
+                    <div class="website-url">www.ecorevive.com</div>
                 </div>
 
                 <div class="content-right">
@@ -618,9 +448,9 @@
             <!-- Hit of the Week -->
             <div class="hit-of-week">
                 <h2 class="hit-title">🔥 Hit of the Week</h2>
-                <div class="hit-item" onclick="showHerbFreezingDetail()">
-                    <div class="hit-item-title">Herb Freezing Storage</div>
-                    <div class="hit-item-desc">Trending reuse idea! Use ice cream containers to freeze fresh herbs in small portions, keeping them fresh for months.</div>
+                <div class="hit-item" onclick="showDetail('ice-cream-box')">
+                    <div class="hit-item-title">Ice Cream Container</div>
+                    <div class="hit-item-desc">Most searched this week! Discover 8+ creative ways to reuse ice cream containers.</div>
                 </div>
             </div>
         </div>
@@ -636,196 +466,10 @@
                 <!-- Reuse ideas will be loaded here -->
             </div>
         </div>
-
-        <!-- Reels Page -->
-        <div id="reels-page" class="reels-page">
-            <button class="back-btn" onclick="showHome()">← Back to Home</button>
-            <div class="reels-header">
-                <h1 class="reels-title">EcoReels</h1>
-                <p class="reels-subtitle">Creative waste reuse ideas</p>
-            </div>
-            <div class="reels-container" id="reelsContainer">
-                <!-- Reels will be loaded here -->
-            </div>
-        </div>
     </div>
 
+    <script src="data.js"></script>
     <script>
-        // Waste data
-        const wasteData = [
-            {
-                id: 'ice-cream-box',
-                name: 'Ice Cream Container',
-                description: 'Plastic ice cream containers can be transformed into useful household items',
-                detailDescription: 'Ice cream containers are perfect for storage and organization due to their durable plastic construction and tight-fitting lids. These versatile containers can serve many purposes around your home and garden.',
-                keywords: ['ice cream', 'container', 'plastic', 'box', 'tub'],
-                reuseIdeas: [
-                    {
-                        title: 'Herb Freezing Storage',
-                        description: 'Freeze fresh dill, parsley, and other herbs in small portions. The airtight seal keeps herbs fresh for months.'
-                    },
-                    {
-                        title: 'Craft Supply Organizer',
-                        description: 'Sort and store small craft items like buttons, beads, ribbons, and threads. The clear plastic makes it easy to see contents.'
-                    },
-                    {
-                        title: 'Seed Starting Pots',
-                        description: 'Drill drainage holes in the bottom and use as planters for starting seeds or growing small herbs indoors.'
-                    },
-                    {
-                        title: 'Paint Water Container',
-                        description: 'Perfect size for holding water while painting. The wide opening makes brush cleaning easy.'
-                    },
-                    {
-                        title: 'Lunch Box',
-                        description: 'Pack salads, fruits, or snacks. The secure lid prevents spills and keeps food fresh.'
-                    },
-                    {
-                        title: 'Garage Storage',
-                        description: 'Store small hardware items like screws, nails, washers, and bolts in your workshop or garage.'
-                    },
-                    {
-                        title: 'Pet Food Storage',
-                        description: 'Store dry pet treats or small amounts of pet food. Keep it fresh and easily accessible.'
-                    },
-                    {
-                        title: 'Beach Toy Container',
-                        description: 'Pack sand toys, shells, or beach treasures. The lid keeps sand from spilling in your bag.'
-                    }
-                ]
-            },
-            {
-                id: 'plastic-bottle',
-                name: 'Plastic Bottle',
-                description: 'Single-use plastic bottles can become useful tools and decorations',
-                detailDescription: 'Plastic bottles are incredibly versatile for DIY projects. Their shape and durability make them perfect for gardening, organization, and creative crafts that benefit both your home and the environment.',
-                keywords: ['plastic', 'bottle', 'water bottle', 'soda bottle', 'beverage'],
-                reuseIdeas: [
-                    {
-                        title: 'Self-Watering Planter',
-                        description: 'Cut the bottle in half, invert the top, and thread a string through the cap to create an automatic watering system for plants.'
-                    },
-                    {
-                        title: 'Bird Feeder',
-                        description: 'Cut feeding holes, add perches made from wooden spoons, fill with birdseed for a garden bird feeder.'
-                    },
-                    {
-                        title: 'Piggy Bank',
-                        description: 'Cut a coin slot in the top and decorate to create a fun savings bank for kids.'
-                    },
-                    {
-                        title: 'Scoop and Funnel',
-                        description: 'Cut diagonally to create a scoop for pet food, garden soil, or laundry detergent.'
-                    },
-                    {
-                        title: 'Organizer Cups',
-                        description: 'Cut to desired height and use as pen holders, makeup brush containers, or desk organizers.'
-                    },
-                    {
-                        title: 'Sprinkler System',
-                        description: 'Poke holes in the cap and sides to create a garden sprinkler or kids\' water toy.'
-                    }
-                ]
-            },
-            {
-                id: 'cardboard-box',
-                name: 'Cardboard Box',
-                description: 'Shipping and packaging boxes can be transformed into functional items',
-                detailDescription: 'Cardboard boxes are excellent for organization, storage, and creative projects. Their sturdy construction and various sizes make them perfect for countless reuse applications throughout your home.',
-                keywords: ['cardboard', 'box', 'shipping box', 'package', 'amazon box'],
-                reuseIdeas: [
-                    {
-                        title: 'Storage Organizer',
-                        description: 'Cut to size and cover with decorative paper to create custom storage boxes for closets, under beds, or shelves.'
-                    },
-                    {
-                        title: 'Cat Playground',
-                        description: 'Cut holes and connect multiple boxes to create tunnels, houses, and climbing structures for cats.'
-                    },
-                    {
-                        title: 'Drawer Dividers',
-                        description: 'Cut strips to create custom drawer dividers for organizing utensils, socks, or office supplies.'
-                    },
-                    {
-                        title: 'Kids\' Playhouse',
-                        description: 'Large boxes become instant playhouses, castles, or rocket ships with some creative cutting and decorating.'
-                    },
-                    {
-                        title: 'Garden Weed Barrier',
-                        description: 'Flatten and place under mulch to suppress weeds naturally. Cardboard decomposes and enriches soil.'
-                    },
-                    {
-                        title: 'Moving Protection',
-                        description: 'Cut into sheets to wrap fragile items or create padding for future moves or storage.'
-                    }
-                ]
-            }
-        ];
-
-        // Reels data
-        const reelsData = [
-            {
-                id: 'reel-1',
-                icon: '🥤',
-                title: 'Bottle Bird Feeder',
-                category: 'Garden & Wildlife',
-                content: 'Transform any plastic bottle into a beautiful bird feeder! Cut small holes for the birds, add wooden spoon perches, and fill with seeds. Hang it in your garden and watch the birds flock to your eco-friendly creation. Perfect weekend project that helps both wildlife and the environment!',
-                upvotes: 247,
-                downvotes: 12,
-                comments: 43
-            },
-            {
-                id: 'reel-2',
-                icon: '📦',
-                title: 'Cardboard Cat Castle',
-                category: 'Pet Projects',
-                content: 'Your cats will go crazy for this! Use large cardboard boxes to create an amazing cat playground. Cut doorways, windows, and connecting tunnels. Stack them high for climbing adventures. Add scratching surfaces with corrugated cardboard. Free entertainment for your feline friends!',
-                upvotes: 189,
-                downvotes: 8,
-                comments: 67
-            },
-            {
-                id: 'reel-3',
-                icon: '🌿',
-                title: 'Herb Freezing Hack',
-                category: 'Kitchen Tips',
-                content: 'Stop throwing away fresh herbs! Use empty ice cream containers to freeze herbs in perfect portions. Chop fresh dill, parsley, cilantro, or basil, place in containers with a bit of water or oil. Freeze and use throughout the year. Game-changer for home cooking!',
-                upvotes: 356,
-                downvotes: 15,
-                comments: 89
-            },
-            {
-                id: 'reel-4',
-                icon: '🏺',
-                title: 'Glass Jar Organizer',
-                category: 'Organization',
-                content: 'Turn old jam and sauce jars into the ultimate bathroom organizers! Perfect for cotton balls, Q-tips, hair ties, and bobby pins. The clear glass lets you see everything at a glance. Add cute labels for that Instagram-worthy bathroom aesthetic. Zero waste, maximum style!',
-                upvotes: 198,
-                downvotes: 7,
-                comments: 34
-            },
-            {
-                id: 'reel-5',
-                icon: '☕',
-                title: 'Coffee Ground Garden Boost',
-                category: 'Gardening',
-                content: 'Your morning coffee can transform your garden! Used coffee grounds are packed with nitrogen that plants love. Mix into compost, sprinkle around acid-loving plants, or use as a natural pest deterrent. Plus, it makes an amazing exfoliating body scrub for yourself too!',
-                upvotes: 423,
-                downvotes: 19,
-                comments: 156
-            },
-            {
-                id: 'reel-6',
-                icon: '👕',
-                title: 'T-Shirt Shopping Bags',
-                category: 'Fashion Upcycle',
-                content: 'Transform old t-shirts into the strongest shopping bags ever! Cut off sleeves and neckline, tie or sew the bottom closed. These bags are stretchy, washable, and can carry surprisingly heavy loads. Perfect for groceries, beach trips, or everyday use. Sustainable fashion win!',
-                upvotes: 267,
-                downvotes: 11,
-                comments: 78
-            }
-        ];
-
         let currentData = [];
 
         // Search functionality
@@ -864,7 +508,6 @@
             if (!item) return;
 
             document.getElementById('main-page').style.display = 'none';
-            document.getElementById('reels-page').style.display = 'none';
             document.getElementById('detail-page').style.display = 'block';
             
             document.getElementById('detailTitle').textContent = item.name;
@@ -879,14 +522,36 @@
             `).join('');
         }
 
-        // Show herb freezing detail specifically
-        function showHerbFreezingDetail() {
-            const item = wasteData.find(w => w.id === 'ice-cream-box');
-            if (!item) return;
+        // Show home page
+        function showHome() {
+            document.getElementById('main-page').style.display = 'block';
+            document.getElementById('detail-page').style.display = 'none';
+            document.getElementById('searchResults').style.display = 'none';
+            document.getElementById('searchInput').value = '';
+        }
 
-            document.getElementById('main-page').style.display = 'none';
-            document.getElementById('reels-page').style.display = 'none';
-            document.getElementById('detail-page').style.display = 'block';
-            
-            document.getElementById('detailTitle').textContent = 'Herb Freezing Storage';
-            document.getElementById('detailDescription
+        // Real-time search
+        document.getElementById('searchInput').addEventListener('input', function() {
+            if (this.value.length >= 2) {
+                searchItems();
+            } else {
+                document.getElementById('searchResults').style.display = 'none';
+            }
+        });
+
+        // Hide search results when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-container')) {
+                document.getElementById('searchResults').style.display = 'none';
+            }
+        });
+
+        // Enter key search
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchItems();
+            }
+        });
+    </script>
+</body>
+</html>
