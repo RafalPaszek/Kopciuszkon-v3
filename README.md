@@ -1,7 +1,7 @@
-# EcoRevive – Transform Waste into Wonder
+# MakeItEco – Transform Waste into Wonder
 
 ## Opis projektu  
-EcoRevive to nowoczesna, responsywna strona internetowa, która promuje kreatywne ponowne wykorzystanie odpadów. Umożliwia użytkownikom wyszukiwanie przedmiotów codziennego użytku (np. pudełek po lodach, butelek plastikowych) i poznawanie inspirujących pomysłów na ich recykling. Projekt ma na celu edukację ekologiczną i zachęcanie do stylu życia przyjaznego środowisku.  
+MakeItEco to nowoczesna, responsywna strona internetowa, która promuje kreatywne ponowne wykorzystanie odpadów. Umożliwia użytkownikom wyszukiwanie przedmiotów codziennego użytku (np. pudełek po lodach, butelek plastikowych) i poznawanie inspirujących pomysłów na ich recykling. Projekt ma na celu edukację ekologiczną i zachęcanie do stylu życia przyjaznego środowisku.  
 
 ---
 
@@ -31,12 +31,15 @@ EcoRevive to nowoczesna, responsywna strona internetowa, która promuje kreatywn
 ---
 
 ## Dalszy rozwój (pomysły)  
-- Dodanie sekcji „O nas” i „Ogłoszenia” (aktualnie przyciski tylko wyświetlają alert)  
+- Dodanie sekcji „Konto” , „O nas” i „Ogłoszenia”   
 - Integracja kont użytkowników i personalizacja wyników  
 - Możliwość dodawania własnych pomysłów przez użytkowników  
 - Wersja mobilna z dedykowanym interfejsem  
+- Dodanie nowej funkcji wzorowanej na rolkach z instagrama, gdzie użytkownicy mogą oceniać i komentować w nowoczesny i angażujący sposób
+- Dodanie funkcji rozpoznawania obiektów po zdjęciu i po kodach kreskowych
+- Dodanie sztucznej inteligencji rozpoznającej przedmiot i wymyślającej zastosowania
 
 ---
 
 ## Autorzy  
-EcoRevive Team
+Kopciuszkon
