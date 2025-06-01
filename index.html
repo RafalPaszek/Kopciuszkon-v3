@@ -3,397 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoRevive - Transform Waste into Wonder</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #2d5a3d 0%, #4a8c3a 50%, #6db33f 100%);
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Diagonal background stripes */
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255,255,255,0.1) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.1) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.1) 75%);
-            background-size: 60px 60px;
-            background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Decorative dots */
-        .decorative-dots {
-            position: absolute;
-            width: 150px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 2px, transparent 2px);
-            background-size: 15px 15px;
-            z-index: 1;
-        }
-
-        .dots-top-right {
-            top: 80px;
-            right: 50px;
-        }
-
-        .dots-bottom-left {
-            bottom: 100px;
-            left: 80px;
-            transform: rotate(45deg);
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            color: white;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #4a8c3a;
-            font-size: 20px;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 40px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            padding: 10px 15px;
-            border-radius: 25px;
-        }
-
-        nav a:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Main content */
-        .main-content {
-            display: flex;
-            align-items: center;
-            min-height: 70vh;
-            gap: 60px;
-        }
-
-        .content-left {
-            flex: 1;
-            color: white;
-        }
-
-        .main-title {
-            font-size: 72px;
-            font-weight: bold;
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
-
-        .main-description {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            opacity: 0.9;
-        }
-
-        .search-container {
-            margin-bottom: 40px;
-        }
-
-        .search-box {
-            display: flex;
-            background: white;
-            border-radius: 50px;
-            padding: 5px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-        }
-
-        .search-input {
-            flex: 1;
-            border: none;
-            padding: 20px 25px;
-            font-size: 18px;
-            border-radius: 50px;
-            outline: none;
-        }
-
-        .search-btn {
-            background: #4a8c3a;
-            color: white;
-            border: none;
-            padding: 20px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .search-btn:hover {
-            background: #3a7230;
-            transform: scale(1.05);
-        }
-
-        .website-url {
-            color: white;
-            font-size: 18px;
-            opacity: 0.8;
-        }
-
-        /* Content right */
-        .content-right {
-            flex: 1;
-            position: relative;
-        }
-
-        .special-offer {
-            position: absolute;
-            top: 50px;
-            right: 0;
-            background: rgba(255,255,255,0.2);
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            color: white;
-            backdrop-filter: blur(10px);
-        }
-
-        .offer-percentage {
-            font-size: 64px;
-            font-weight: bold;
-            line-height: 1;
-        }
-
-        .offer-text {
-            font-size: 20px;
-            margin-top: 10px;
-        }
-
-        /* Search results */
-        .search-results {
-            display: none;
-            background: white;
-            border-radius: 20px;
-            margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .result-item {
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .result-item:hover {
-            background: #f8f9fa;
-            transform: translateX(10px);
-        }
-
-        .result-item:last-child {
-            border-bottom: none;
-        }
-
-        .result-title {
-            font-weight: bold;
-            color: #4a8c3a;
-            margin-bottom: 5px;
-        }
-
-        .result-description {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Hit of the week */
-        .hit-of-week {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 20px;
-            margin-top: 40px;
-            backdrop-filter: blur(10px);
-        }
-
-        .hit-title {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .hit-item {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .hit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .hit-item-title {
-            color: #4a8c3a;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .hit-item-desc {
-            color: #666;
-            font-size: 14px;
-        }
-
-        /* Detail page styles */
-        .detail-page {
-            display: none;
-            color: white;
-            padding: 40px 0;
-        }
-
-        .detail-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .detail-title {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .detail-description {
-            font-size: 20px;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .reuse-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .reuse-card {
-            background: rgba(255,255,255,0.15);
-            padding: 30px;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-
-        .reuse-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .reuse-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .reuse-card p {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-        }
-
-        .back-btn {
-            background: rgba(255,255,255,0.2);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 50px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .back-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-2px);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .main-title {
-                font-size: 48px;
-            }
-
-            nav ul {
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 16px;
-            }
-
-            .special-offer {
-                position: relative;
-                margin-top: 30px;
-            }
-        }
-    </style>
+    <title>MakeItEco - Transform Waste into Wonder</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="decorative-dots dots-top-right"></div>
@@ -403,11 +14,12 @@
         <header>
             <div class="logo">
                 <div class="logo-icon">♻</div>
-                EcoRevive
+                MakeItEco
             </div>
             <nav>
                 <ul>
                     <li><a href="#" onclick="showHome()">HOME</a></li>
+                    <li><a href="#" onclick="showEcoReels()">ECOREELS</a></li>
                     <li><a href="#" onclick="alert('About Us - Coming Soon!')">ABOUT US</a></li>
                     <li><a href="#" onclick="alert('Account - Coming Soon!')">ACCOUNT</a></li>
                     <li><a href="#" onclick="alert('Announcements - Coming Soon!')">ANNOUNCEMENTS</a></li>
@@ -434,7 +46,13 @@
                         <div class="search-results" id="searchResults"></div>
                     </div>
 
-                    <div class="website-url">www.ecorevive.com</div>
+                    <div class="submit-idea-container">
+                        <button class="submit-idea-btn" onclick="alert('Submit Your Idea - Coming Soon!')">
+                            💡 Submit Your Reuse Idea
+                        </button>
+                    </div>
+
+                    <div class="website-url">www.makeiteeco.com</div>
                 </div>
 
                 <div class="content-right">
@@ -445,12 +63,12 @@
                 </div>
             </div>
 
-            <!-- Hit of the Week -->
+            <!-- Featured Idea -->
             <div class="hit-of-week">
-                <h2 class="hit-title">🔥 Hit of the Week</h2>
-                <div class="hit-item" onclick="showDetail('ice-cream-box')">
-                    <div class="hit-item-title">Ice Cream Container</div>
-                    <div class="hit-item-desc">Most searched this week! Discover 8+ creative ways to reuse ice cream containers.</div>
+                <h2 class="hit-title">🌟 Featured Idea</h2>
+                <div class="hit-item" onclick="showIdeaDetail('herb-freezing')">
+                    <div class="hit-item-title">Herb Freezing Storage</div>
+                    <div class="hit-item-desc">Freeze fresh dill, parsley, and other herbs in ice cream containers. The airtight seal keeps herbs fresh for months!</div>
                 </div>
             </div>
         </div>
@@ -464,6 +82,18 @@
             </div>
             <div class="reuse-grid" id="reuseGrid">
                 <!-- Reuse ideas will be loaded here -->
+            </div>
+        </div>
+
+        <!-- EcoReels Page -->
+        <div id="ecoreels-page" class="ecoreels-page">
+            <button class="back-btn" onclick="showHome()">← Back to Home</button>
+            <div class="ecoreels-header">
+                <h1 class="ecoreels-title">🎬 EcoReels</h1>
+                <p class="ecoreels-description">Discover creative waste reuse ideas in bite-sized videos!</p>
+            </div>
+            <div class="reels-container" id="reelsContainer">
+                <!-- Reels will be loaded here -->
             </div>
         </div>
     </div>
@@ -509,6 +139,7 @@
 
             document.getElementById('main-page').style.display = 'none';
             document.getElementById('detail-page').style.display = 'block';
+            document.getElementById('ecoreels-page').style.display = 'none';
             
             document.getElementById('detailTitle').textContent = item.name;
             document.getElementById('detailDescription').textContent = item.detailDescription;
@@ -522,12 +153,89 @@
             `).join('');
         }
 
+        // Show idea detail (for featured idea)
+        function showIdeaDetail(ideaType) {
+            if (ideaType === 'herb-freezing') {
+                showDetail('ice-cream-box');
+            }
+        }
+
         // Show home page
         function showHome() {
             document.getElementById('main-page').style.display = 'block';
             document.getElementById('detail-page').style.display = 'none';
+            document.getElementById('ecoreels-page').style.display = 'none';
             document.getElementById('searchResults').style.display = 'none';
             document.getElementById('searchInput').value = '';
+        }
+
+        // Show EcoReels page
+        function showEcoReels() {
+            document.getElementById('main-page').style.display = 'none';
+            document.getElementById('detail-page').style.display = 'none';
+            document.getElementById('ecoreels-page').style.display = 'block';
+            loadReels();
+        }
+
+        // Load reels content
+        function loadReels() {
+            const reelsContainer = document.getElementById('reelsContainer');
+            const reelsData = [
+                {
+                    title: "Transform Ice Cream Containers",
+                    description: "Turn empty ice cream tubs into perfect herb storage! Freeze fresh dill, parsley, and cilantro in small portions. The airtight seal keeps them fresh for months. Just grab what you need for cooking!",
+                    author: "EcoGuru_Sarah"
+                },
+                {
+                    title: "Plastic Bottle Bird Feeder",
+                    description: "Don't toss that water bottle! Cut small holes, add wooden spoon perches, and fill with birdseed. Your garden birds will love this DIY feeder, and you're saving the planet one bottle at a time! 🐦",
+                    author: "GreenThumb_Mike"
+                },
+                {
+                    title: "Cardboard Box Cat Castle",
+                    description: "Your Amazon boxes = Ultimate cat playground! Cut holes, stack them up, and watch your feline friend go crazy. Multiple levels, tunnels, and hiding spots. Cats love cardboard more than expensive toys!",
+                    author: "PetLover_Emma"
+                },
+                {
+                    title: "Coffee Grounds Garden Magic",
+                    description: "Used coffee grounds = Garden gold! Mix into soil for nitrogen boost, use as natural pest deterrent around plants, or create DIY body scrub. Your plants AND skin will thank you! ☕",
+                    author: "CoffeeCycle_Alex"
+                },
+                {
+                    title: "Glass Jar Organization Hack",
+                    description: "Jam jars everywhere? Perfect! Use for spice storage, bathroom organizers, or desk accessories. Clear glass shows everything inside. Label them for maximum organization satisfaction! ✨",
+                    author: "OrganizeQueen_Jess"
+                },
+                {
+                    title: "T-Shirt to Shopping Bags",
+                    description: "Old t-shirts = Free shopping bags! Cut off sleeves and neckline, tie the bottom closed. Super stretchy and strong. Never forget reusable bags again because you can make them anywhere! 👕",
+                    author: "UpcycleKing_Tom"
+                }
+            ];
+
+            reelsContainer.innerHTML = reelsData.map((reel, index) => `
+                <div class="reel-item">
+                    <div class="reel-content">
+                        <h3 class="reel-title">${reel.title}</h3>
+                        <p class="reel-description">${reel.description}</p>
+                        <div class="reel-author">@${reel.author}</div>
+                    </div>
+                    <div class="reel-actions">
+                        <div class="reel-action">
+                            <div class="action-icon upvote">👍</div>
+                            <span class="action-count">${Math.floor(Math.random() * 500) + 50}</span>
+                        </div>
+                        <div class="reel-action">
+                            <div class="action-icon downvote">👎</div>
+                            <span class="action-count">${Math.floor(Math.random() * 20) + 1}</span>
+                        </div>
+                        <div class="reel-action">
+                            <div class="action-icon comment">💬</div>
+                            <span class="action-count">${Math.floor(Math.random() * 100) + 10}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
         // Real-time search
