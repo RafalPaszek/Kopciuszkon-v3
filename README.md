@@ -31,6 +31,7 @@ MakeItEco to nowoczesna, responsywna strona internetowa, która promuje kreatywn
 ---
 
 ## Dalszy rozwój (pomysły)  
+- Dodanie zdjęc do każdego wyniku wyszukiwania
 - Dodanie sekcji „Konto” , „O nas” i „Ogłoszenia”   
 - Integracja kont użytkowników i personalizacja wyników  
 - Możliwość dodawania własnych pomysłów przez użytkowników  
